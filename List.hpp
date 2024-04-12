@@ -4,10 +4,10 @@
 
 
 struct Node
-    {
-        int value;
-        Node *next;
-    };
+{
+    int value;
+    Node *next;
+};
    
 class List
 {
