@@ -1,67 +1,21 @@
 #include<iostream>
+#include <list>
 
-class List
-{
-private:
-    struct Node
-    {
-        int value;
-        Node *next;
-    };
-   
-
-    Node* insert(Node *nd, int value)
-    {
-        if(nd == NULL)
-        {
-            nd = new Node{value, NULL};
-
-        }
-        else 
-        {
-            nd->next = insert(nd->next, value);
-        }
-        return nd;
-    }
-    void print_out(Node *nd)
-    {
-        if(nd != NULL)
-        {
-            std::cout << nd->value << std::endl;
-            print_out(nd->next);
-        }
-    }
-
-
-public:
-    Node *head;
-    List()
-    {
-        head = NULL;
-    }
-    void insert(int value)
-    {
-        head = insert(head, value);
-    }
-    void print_out()
-    {
-        print_out(head);
-    }
-
-
-};
-
+#include "List.hpp"
 
 
 int main()
 {
-
+    //pop back , pop front is empty
+    
     List list;
-    list.insert(10);
-    list.insert(20);
-
+    for(int i = 1; i <= 5; ++i)
+    {
+        list.insert(i * 10);
+    }
+    list.emplace_front(0);
     list.print_out();
-
-
+    
+    
     return 0;
 }
