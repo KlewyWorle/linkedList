@@ -30,7 +30,7 @@ private:
 
 
     Node* find_node(Node *nd, int value);
-    Node *head;
+    Node *head;//                                       Abstracted functions
 public:
     
     List();
@@ -44,6 +44,6 @@ public:
     void pop_front();
     void pop_back();
     Node* find_node(int value);
-
+    //                                          User exposed functions
 
 };
